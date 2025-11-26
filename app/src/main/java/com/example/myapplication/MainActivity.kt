@@ -57,13 +57,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         println("жц-создает")
         setContent {
-            MyApplicationTheme{
+            MyApplicationTheme {
                 ViewMain()
             }
         }
     }
+
     @Composable
-    fun ViewMain(){
+    fun ViewMain() {
         var message by remember() { mutableStateOf("") }
 
         Column(
@@ -101,11 +102,11 @@ class MainActivity : ComponentActivity() {
                     } else {
                         "101"
                     }
-//                    Toast.makeText(
-//                        this@MainActivity,
-//                        toastMessage,
-//                        Toast.LENGTH_SHORT
-//                    ).show()
+                    Toast.makeText(
+                        this@MainActivity,
+                        toastMessage,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             ) {
                 Text(text = "хуячь", fontSize = 50.sp)
@@ -114,10 +115,12 @@ class MainActivity : ComponentActivity() {
 
 
     }
+
     @Preview(showBackground = true)
     @Composable
-    fun ViewMainPreview(){
-        var message by remember() { mutableStateOf("")
+    fun ViewMainPreview() {
+        var message by remember() {
+            mutableStateOf("")
         }
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -167,7 +170,6 @@ class MainActivity : ComponentActivity() {
 
 
     }
-
 
 
 }
